@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之蓝手工班 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/mengzhilanshougongban.png" class="product-img" alt="梦之蓝手工班">
+      <div class="product-info">
+        <h1 class="product-title" id="title">梦之蓝手工班</h1>
+        <div class="product-desc" id="desc">一切伟大皆由双手创造，梦之蓝手工班是最能体验非遗技艺和绵柔老酒的中国高端白酒，可谓是："天人合一，传世手工；绵柔老酒，只此一品"。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.4c65af26.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            传统手工酿造：梦之蓝手工班采用传统的手工酿造方法，每一瓶都是精细工艺的结晶。<br>
+            精选原料：使用最优质的粮食和纯净的水源，在酿造过程中的每一个环节都精益求精。<br>
+            长时间发酵与陈酿：酒体经过长时间的发酵和陈酿，形成深邃而复杂的风味。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            入口细腻：白酒入口柔和顺滑，质地精致，让人愉悦。<br>
+            复杂风味：具有丰富多层次的风味，包括花香、果香和粮香，带来复杂而精细的品饮体验。<br>
+            回味悠长：回味持久且和谐，甜度平衡，余味绵长。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.30a3fb54.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.72d65873.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            手工瓶身设计：瓶身设计体现手工酿造的特点，通常带有艺术元素和传统中国图案。<br>
+            奢华包装：精致细腻的包装凸显产品的高端和手工品质。<br>
+            独特品牌标识：设计中突出了梦之蓝品牌，象征着品质和传统。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            天人合一：梦之蓝手工班源于梦之蓝中央酒区核心区的古老发酵窖池，由中国酿酒大师和中国首席品酒师领衔，携手20年工龄老匠人酿造，集中体现了"天人合一、天地同酿"的酿酒哲学。<br><br>
+            传世手工：传承国家非遗洋河古法酿酒技艺 ，历经137道工序，全流程、纯手工酿造。<br><br>
+            绵柔老酒：在百年地下酒窖秘制古法封藏，滴滴珍贵皆为绵柔老酒。<br><br>
+            只此一品：由于生来稀缺 ，所以十分珍贵，因此也被誉为"酒杯中的活文物、老酒中的艺术品、收藏界的软黄金"。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.06379423.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-bjjsj.55384e98.png" alt="白酒鉴赏家" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">白酒鉴赏家</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdsj.efd122f5.png" alt="高端社交" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端社交</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdlp.acd0f1a4.png" alt="高端礼品" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端礼品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '梦之蓝手工班',
+        desc: '一切伟大皆由双手创造，梦之蓝手工班是最能体验非遗技艺和绵柔老酒的中国高端白酒，可谓是："天人合一，传世手工；绵柔老酒，只此一品"。',
+        'craft-title': '工艺',
+        'craft-content': '传统手工酿造：梦之蓝手工班采用传统的手工酿造方法，每一瓶都是精细工艺的结晶。<br>精选原料：使用最优质的粮食和纯净的水源，在酿造过程中的每一个环节都精益求精。<br>长时间发酵与陈酿：酒体经过长时间的发酵和陈酿，形成深邃而复杂的风味。',
+        'taste-title': '口感',
+        'taste-content': '入口细腻：白酒入口柔和顺滑，质地精致，让人愉悦。<br>复杂风味：具有丰富多层次的风味，包括花香、果香和粮香，带来复杂而精细的品饮体验。<br>回味悠长：回味持久且和谐，甜度平衡，余味绵长。',
+        'appearance-title': '外观',
+        'appearance-content': '手工瓶身设计：瓶身设计体现手工酿造的特点，通常带有艺术元素和传统中国图案。<br>奢华包装：精致细腻的包装凸显产品的高端和手工品质。<br>独特品牌标识：设计中突出了梦之蓝品牌，象征着品质和传统。',
+        'other-title': '其他',
+        'other-content': '天人合一：梦之蓝手工班源于梦之蓝中央酒区核心区的古老发酵窖池，由中国酿酒大师和中国首席品酒师领衔，携手20年工龄老匠人酿造，集中体现了"天人合一、天地同酿"的酿酒哲学。<br><br>传世手工：传承国家非遗洋河古法酿酒技艺 ，历经137道工序，全流程、纯手工酿造。<br><br>绵柔老酒：在百年地下酒窖秘制古法封藏，滴滴珍贵皆为绵柔老酒。<br><br>只此一品：由于生来稀缺 ，所以十分珍贵，因此也被誉为"酒杯中的活文物、老酒中的艺术品、收藏界的软黄金"。',
+        'scene-title': '适合场景',
+        'scene1': '白酒鉴赏家',
+        'scene2': '高端社交',
+        'scene3': '高端礼品',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Dream Blue Handmade Edition',
+        desc: 'All greatness is created by hand. Dream Blue Handmade Edition is the ultimate experience of intangible heritage craftsmanship and mellow aged liquor in Chinese high-end baijiu. "Harmony between man and nature, handcrafted legacy; mellow aged liquor, one of a kind."',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Traditional Handcrafted Brewing: Dream Blue Handmade Edition uses traditional manual brewing methods, with each bottle a crystallization of fine craftsmanship.<br>Selected Ingredients: The finest grains and pure water are used, with meticulous attention to every step of the brewing process.<br>Long Fermentation & Aging: The liquor undergoes long fermentation and aging, resulting in deep and complex flavors.',
+        'taste-title': 'Taste',
+        'taste-content': 'Delicate Entry: The liquor is soft and smooth on entry, with a refined texture for a pleasant experience.<br>Complex Flavors: Rich, multi-layered flavors including floral, fruity, and grain notes, offering a complex and refined tasting experience.<br>Long Aftertaste: The aftertaste is lasting and harmonious, with balanced sweetness and a lingering finish.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Handcrafted Bottle Design: The bottle design reflects the characteristics of manual brewing, often featuring artistic elements and traditional Chinese patterns.<br>Luxurious Packaging: Exquisite packaging highlights the product\'s high-end and handcrafted quality.<br>Unique Brand Mark: The design emphasizes the Dream Blue brand, symbolizing quality and tradition.',
+        'other-title': 'Others',
+        'other-content': 'Harmony between man and nature: Dream Blue Handmade Edition originates from ancient fermentation cellars in the core area of the Dream Blue central distillery, crafted by Chinese master distillers and chief tasters, together with veteran craftsmen with 20 years of experience, embodying the philosophy of "harmony between man and nature, brewing with heaven and earth."<br><br>Handcrafted Legacy: Inheriting the national intangible cultural heritage of Yanghe\'s ancient brewing techniques, going through 137 steps, the entire process is purely manual.<br><br>Mellow Aged Liquor: Aged in century-old underground cellars using secret ancient methods, every drop is precious mellow aged liquor.<br><br>One of a Kind: Due to its rarity, it is extremely precious, known as "a living relic in a wine glass, a work of art among aged liquors, and soft gold in the world of collectors."',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Baijiu Connoisseurs',
+        'scene2': 'High-end Social Events',
+        'scene3': 'Premium Gifts',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '夢の藍手工班',
+        desc: 'すべての偉大さは手から生まれる。夢の藍手工班は非物質文化遺産の技とまろやかな熟成酒を体験できる中国高級白酒。「天人合一、伝承の手仕事；まろやか熟成酒、唯一無二」。',
+        'craft-title': '製法',
+        'craft-content': '伝統的な手作業による醸造：夢の藍手工班は伝統的な手作業による醸造方法を採用し、一本一本が精緻な技の結晶。<br>厳選原料：最高品質の穀物と純粋な水を使用し、醸造の各工程で細部までこだわる。<br>長期発酵と熟成：長期発酵と熟成により、深みと複雑さのある味わいを実現。',
+        'taste-title': '味わい',
+        'taste-content': '繊細な口当たり：柔らかく滑らかで、上品な質感が心地よい。<br>複雑な風味：花や果実、穀物の香りを含む多層的な風味で、複雑かつ精緻なテイスティング体験を提供。<br>余韻が長い：持続的で調和の取れた余韻、バランスの取れた甘み、長く続く後味。',
+        'appearance-title': '外観',
+        'appearance-content': '手作りボトルデザイン：手作業醸造の特徴を反映し、芸術的要素や伝統的な中国模様をあしらったデザイン。<br>豪華なパッケージ：精巧なパッケージは高級感と手作りの品質を際立たせます。<br>独自ブランドマーク：デザインには夢の藍ブランドが強調され、品質と伝統を象徴。',
+        'other-title': 'その他',
+        'other-content': '天人合一：夢の藍手工班は夢の藍中央酒区の古い発酵窖池から生まれ、中国の醸造マスターと首席テイスターが率い、20年の経験を持つ職人と共に醸造。「天人合一、天地と共に醸す」という哲学を体現。<br><br>伝承の手仕事：国家級非物質文化遺産である洋河の古法醸造技術を受け継ぎ、137の工程を経て、全工程が手作業。<br><br>まろやか熟成酒：百年地下酒蔵で秘伝の古法で熟成され、一滴一滴が貴重なまろやか熟成酒。<br><br>唯一無二：生まれながらに希少で非常に貴重。「グラスの中の生きた文化財、熟成酒の芸術品、コレクター界のソフトゴールド」とも称される。',
+        'scene-title': 'おすすめシーン',
+        'scene1': '白酒愛好家',
+        'scene2': 'ハイエンド社交',
+        'scene3': '高級ギフト',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

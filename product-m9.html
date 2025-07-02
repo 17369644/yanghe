@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之蓝M9 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/m9.png" class="product-img" alt="梦之蓝M9">
+      <div class="product-info">
+        <h1 class="product-title" id="title">梦之蓝M9</h1>
+        <div class="product-desc" id="desc">百里挑一，小坛窖藏，温润如玉，方为梦九。梦之蓝M9产自梦之蓝中央酒区核心区，主体基酒都是小坛藏足8年以上的陈年酒，辅以10年以上不同风格窖藏陈年调味酒精心雕琢，看起来色泽微黄，闻起来自然陈香，喝下去温润如玉。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.e958c047.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            精选原料：梦之蓝M9采用最优质的高粱、大米、小麦等原料，确保酒体的纯净和高品质。<br>
+            传统工艺与现代技术结合：传承洋河酒厂的经典酿造工艺，并结合现代科技，优化发酵和蒸馏过程，保证每一瓶酒的卓越品质。<br>
+            长时间陈酿：经过长时间的窖藏陈酿，使酒体更加醇厚，风味更加复杂。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            丰满酒体：梦之蓝M9酒体丰满，香气浓郁，带有花香、果香和粮香的多层次香气。<br>
+            丝滑入口：入口柔顺，质感如丝绸般顺滑，适口性极佳。<br>
+            回味悠长：具有悠长而丰富的回味，层次分明，余味绵长且令人愉悦。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.e323b627.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.8287fe94.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            精美瓶身设计：瓶身设计精美，融合传统与现代元素，采用高档材料，体现出奢华与典雅的风格。<br>
+            高端包装：包装设计考究，精致豪华，适合作为高端礼品。<br>
+            独特标识：瓶身和包装上有显著的梦之蓝品牌标识，象征高品质和尊贵。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            限量生产：梦之蓝M9产量有限，具有很高的稀有性和收藏价值。<br><br>
+            品牌形象：作为洋河酒厂顶级产品之一，梦之蓝M9代表了洋河酒的最高水平和品牌形象。<br><br>
+            文化传承：体现了洋河酒厂深厚的文化底蕴和卓越的酿造工艺，传承与创新相结合。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.2032f5b7.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swrs.447482f4.png" alt="商务人士" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">商务人士</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdsj.efd122f5.png" alt="高端社交" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端社交</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdlp.acd0f1a4.png" alt="高端礼品" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端礼品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '梦之蓝M9',
+        desc: '百里挑一，小坛窖藏，温润如玉，方为梦九。梦之蓝M9产自梦之蓝中央酒区核心区，主体基酒都是小坛藏足8年以上的陈年酒，辅以10年以上不同风格窖藏陈年调味酒精心雕琢，看起来色泽微黄，闻起来自然陈香，喝下去温润如玉。',
+        'craft-title': '工艺',
+        'craft-content': '精选原料：梦之蓝M9采用最优质的高粱、大米、小麦等原料，确保酒体的纯净和高品质。<br>传统工艺与现代技术结合：传承洋河酒厂的经典酿造工艺，并结合现代科技，优化发酵和蒸馏过程，保证每一瓶酒的卓越品质。<br>长时间陈酿：经过长时间的窖藏陈酿，使酒体更加醇厚，风味更加复杂。',
+        'taste-title': '口感',
+        'taste-content': '丰满酒体：梦之蓝M9酒体丰满，香气浓郁，带有花香、果香和粮香的多层次香气。<br>丝滑入口：入口柔顺，质感如丝绸般顺滑，适口性极佳。<br>回味悠长：具有悠长而丰富的回味，层次分明，余味绵长且令人愉悦。',
+        'appearance-title': '外观',
+        'appearance-content': '精美瓶身设计：瓶身设计精美，融合传统与现代元素，采用高档材料，体现出奢华与典雅的风格。<br>高端包装：包装设计考究，精致豪华，适合作为高端礼品。<br>独特标识：瓶身和包装上有显著的梦之蓝品牌标识，象征高品质和尊贵。',
+        'other-title': '其他',
+        'other-content': '限量生产：梦之蓝M9产量有限，具有很高的稀有性和收藏价值。<br><br>品牌形象：作为洋河酒厂顶级产品之一，梦之蓝M9代表了洋河酒的最高水平和品牌形象。<br><br>文化传承：体现了洋河酒厂深厚的文化底蕴和卓越的酿造工艺，传承与创新相结合。',
+        'scene-title': '适合场景',
+        'scene1': '商务人士',
+        'scene2': '高端社交',
+        'scene3': '高端礼品',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Dream Blue M9',
+        desc: 'One in a hundred, aged in small jars, as warm and smooth as jade—this is Dream Blue M9. Produced in the core area of the Dream Blue central distillery, the base liquor is aged for over 8 years in small jars, blended with over 10-year-old aged flavoring liquors. It appears slightly yellow, with a natural aged aroma and a warm, jade-like taste.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Selected Ingredients: Dream Blue M9 uses only the finest sorghum, rice, wheat and other grains to ensure purity and high quality.<br>Traditional Craft & Modern Technology: Inherits Yanghe\'s classic brewing craftsmanship, combined with modern technology to optimize fermentation and distillation, ensuring excellence in every bottle.<br>Long Aging: Aged for a long time in cellars, making the liquor richer and more complex in flavor.',
+        'taste-title': 'Taste',
+        'taste-content': 'Full-bodied: Dream Blue M9 is full-bodied, with rich aromas and multi-layered notes of flowers, fruits and grains.<br>Silky Entry: Smooth and silky on entry, with an excellent mouthfeel.<br>Long Aftertaste: Long, rich aftertaste, distinct layers, lingering and pleasant.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Exquisite Bottle Design: The bottle is exquisitely designed, blending traditional and modern elements, using premium materials to reflect luxury and elegance.<br>High-end Packaging: The packaging is sophisticated and luxurious, perfect as a premium gift.<br>Unique Mark: The bottle and packaging feature a prominent Dream Blue brand mark, symbolizing high quality and prestige.',
+        'other-title': 'Others',
+        'other-content': 'Limited Production: Dream Blue M9 is produced in limited quantities, making it rare and collectible.<br><br>Brand Image: As one of Yanghe\'s top products, Dream Blue M9 represents the highest level and brand image of Yanghe liquor.<br><br>Cultural Heritage: Embodies Yanghe\'s deep cultural heritage and superb brewing craftsmanship, combining tradition and innovation.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Business Professionals',
+        'scene2': 'High-end Social Events',
+        'scene3': 'Premium Gifts',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '夢之藍M9',
+        desc: '百に一つ、小さな甕で熟成、玉のように滑らかで温かみのある味わい。夢之藍M9は中央酒区のコアエリアで生産され、ベース酒は8年以上小甕で熟成、10年以上の異なるスタイルの熟成酒をブレンド。色はやや黄みがかり、自然な熟成香、口当たりは玉のように滑らか。',
+        'craft-title': '工芸',
+        'craft-content': '厳選原料：夢之藍M9は最高品質の高粱、米、小麦などを使用し、酒の純度と品質を保証。<br>伝統工芸と現代技術の融合：伝統的な醸造技術を受け継ぎ、現代技術と組み合わせて発酵と蒸留を最適化し、卓越した品質を実現。<br>長期熟成：長期間の熟成により、酒体はより豊かで複雑な風味に。',
+        'taste-title': '味わい',
+        'taste-content': '豊かなボディ：夢之藍M9はボディが豊かで、花や果実、穀物の多層的な香りが広がる。<br>シルキーな口当たり：滑らかでシルクのような口当たり、抜群の飲み心地。<br>長い余韻：長く豊かな余韻、層のある味わい、心地よく続く。',
+        'appearance-title': '外観',
+        'appearance-content': '精巧なボトルデザイン：伝統と現代要素を融合した精巧なデザイン、高級素材を使用し、贅沢さとエレガンスを表現。<br>高級パッケージ：洗練された豪華なパッケージで、プレミアムギフトにも最適。<br>独自マーク：ボトルとパッケージに夢之藍ブランドの明確なマークがあり、高品質と名誉を象徴。',
+        'other-title': 'その他',
+        'other-content': '限定生産：夢之藍M9は生産量が限られており、希少性とコレクション価値が高い。<br><br>ブランドイメージ：洋河のトップ製品の一つとして、夢之藍M9は洋河酒の最高レベルとブランドイメージを体現。<br><br>文化的伝承：深い文化的背景と卓越した醸造技術を受け継ぎ、伝統と革新を融合。',
+        'scene-title': 'おすすめシーン',
+        'scene1': 'ビジネスパーソン',
+        'scene2': 'ハイエンド社交',
+        'scene3': '高級ギフト',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

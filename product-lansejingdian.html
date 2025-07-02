@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蓝色经典 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/lansejingdian.png" class="product-img" alt="蓝色经典">
+      <div class="product-info">
+        <h1 class="product-title" id="title">蓝色经典</h1>
+        <div class="product-desc" id="desc">入口顺滑，花果香气平衡，酒体丰满，适合广泛消费群体和各种场合，是日常与宴请的优选。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.501a47f2.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            传统工艺：蓝色经典白酒采用洋河传统的酿造方法，这些方法经过数代的精炼，产生丰富而复杂的风味。<br>
+            现代提升：结合现代技术进步，确保质量控制和一致性，提升了传统的酿造过程。<br>
+            优质原料：使用高质量的高粱、大米和小麦等粮食，以及纯净水源，打造优质产品。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            醇厚风味：提供顺滑而醇厚的风味，花香、果香和粮香平衡。<br>
+            丝滑入口：入口丝滑柔顺，适合广泛的消费者。<br>
+            复杂余味：余味悠长而和谐，层次丰富，留下深刻印象。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.b2b93a53.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.699e5843.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            简洁瓶身设计：瓶身设计简洁现代，通常采用蓝色调，象征纯净和品质。<br>
+            精致包装：包装优雅精致，适合作为礼品和高端展示。<br>
+            鲜明品牌：瓶身上有清晰的洋河品牌标志，强调产品的传承和高品质。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            广泛市场认知：蓝色经典是洋河最受认可和广泛享受的产品之一，以其一致的质量和风味著称。<br><br>
+            高性价比：定位于中高端市场，以合理的价格提供卓越的品质，性价比极高。<br><br>
+            文化意义：代表洋河酒厂丰富的文化遗产，将传统工艺与现代优雅结合。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.131bce8d.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-rcyy.c69d2def.png" alt="日常饮用" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">日常饮用</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swyq.3a7dad88.png" alt="商务宴请" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">商务宴请</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-jtjh.bc53a504.png" alt="家庭聚会" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">家庭聚会</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '蓝色经典',
+        desc: '入口顺滑，花果香气平衡，酒体丰满，适合广泛消费群体和各种场合，是日常与宴请的优选。',
+        'craft-title': '工艺',
+        'craft-content': '传统工艺：蓝色经典白酒采用洋河传统的酿造方法，这些方法经过数代的精炼，产生丰富而复杂的风味。<br>现代提升：结合现代技术进步，确保质量控制和一致性，提升了传统的酿造过程。<br>优质原料：使用高质量的高粱、大米和小麦等粮食，以及纯净水源，打造优质产品。',
+        'taste-title': '口感',
+        'taste-content': '醇厚风味：提供顺滑而醇厚的风味，花香、果香和粮香平衡。<br>丝滑入口：入口丝滑柔顺，适合广泛的消费者。<br>复杂余味：余味悠长而和谐，层次丰富，留下深刻印象。',
+        'appearance-title': '外观',
+        'appearance-content': '简洁瓶身设计：瓶身设计简洁现代，通常采用蓝色调，象征纯净和品质。<br>精致包装：包装优雅精致，适合作为礼品和高端展示。<br>鲜明品牌：瓶身上有清晰的洋河品牌标志，强调产品的传承和高品质。',
+        'other-title': '其他',
+        'other-content': '广泛市场认知：蓝色经典是洋河最受认可和广泛享受的产品之一，以其一致的质量和风味著称。<br><br>高性价比：定位于中高端市场，以合理的价格提供卓越的品质，性价比极高。<br><br>文化意义：代表洋河酒厂丰富的文化遗产，将传统工艺与现代优雅结合。',
+        'scene-title': '适合场景',
+        'scene1': '日常饮用',
+        'scene2': '商务宴请',
+        'scene3': '家庭聚会',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Blue Classic',
+        desc: 'Smooth entry, balanced floral and fruity aroma, full-bodied, suitable for a wide range of consumers and occasions, the preferred choice for daily and banquet use.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Traditional Craft: Blue Classic baijiu uses Yanghe\'s traditional brewing methods, refined over generations to produce rich and complex flavors.<br>Modern Enhancement: Combined with modern technological advances, ensuring quality control and consistency, enhancing the traditional brewing process.<br>Premium Ingredients: Uses high-quality sorghum, rice, wheat and pure water to create a premium product.',
+        'taste-title': 'Taste',
+        'taste-content': 'Rich Flavor: Offers a smooth and mellow taste, with balanced floral, fruity and grain aromas.<br>Silky Entry: Silky and smooth on entry, suitable for a wide range of consumers.<br>Complex Aftertaste: Long and harmonious aftertaste, rich in layers, leaving a deep impression.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Simple Bottle Design: The bottle design is simple and modern, usually in blue tones, symbolizing purity and quality.<br>Exquisite Packaging: Elegant and exquisite packaging, suitable for gifts and high-end display.<br>Distinctive Brand: Clear Yanghe brand mark on the bottle, emphasizing heritage and high quality.',
+        'other-title': 'Others',
+        'other-content': 'Wide Market Recognition: Blue Classic is one of Yanghe\'s most recognized and widely enjoyed products, known for its consistent quality and flavor.<br><br>High Cost Performance: Positioned in the mid-to-high-end market, offering excellent quality at a reasonable price, with outstanding value.<br><br>Cultural Significance: Represents Yanghe\'s rich cultural heritage, combining traditional craftsmanship with modern elegance.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Daily Drinking',
+        'scene2': 'Business Banquet',
+        'scene3': 'Family Gathering',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '藍色クラシック',
+        desc: '滑らかな口当たり、花や果実の香りがバランスよく広がり、ボディも豊か。幅広い消費者と様々なシーンに最適な、日常や宴会の定番。',
+        'craft-title': '工芸',
+        'craft-content': '伝統工芸：藍色クラシック白酒は、世代を超えて磨かれた洋河の伝統的な醸造法を採用し、豊かで複雑な風味を生み出します。<br>現代的な向上：現代技術の進歩を取り入れ、品質管理と一貫性を確保し、伝統的な醸造工程を向上。<br>高品質原料：高品質の高粱、米、小麦、純粋な水を使用し、上質な製品を作り上げます。',
+        'taste-title': '味わい',
+        'taste-content': '豊かな風味：滑らかでまろやかな味わい、花や果実、穀物の香りがバランスよく広がります。<br>シルキーな口当たり：シルクのように滑らかで、幅広い消費者に適しています。<br>複雑な余韻：長く調和の取れた余韻、層のある味わい、深い印象を残します。',
+        'appearance-title': '外観',
+        'appearance-content': 'シンプルなボトルデザイン：シンプルでモダンなデザイン、通常は青色で純粋さと品質を象徴。<br>精巧なパッケージ：エレガントで精巧なパッケージはギフトや高級展示にも最適。<br>鮮明なブランド：ボトルに明確な洋河ブランドマークがあり、伝統と高品質を強調。',
+        'other-title': 'その他',
+        'other-content': '幅広い市場認知：藍色クラシックは洋河で最も認知され、広く楽しまれている製品の一つで、その一貫した品質と風味で知られています。<br><br>高いコストパフォーマンス：中高級市場向けに位置づけられ、手頃な価格で優れた品質を提供し、非常に高い価値を持ちます。<br><br>文化的意義：洋河酒造の豊かな文化遺産を代表し、伝統工芸と現代的なエレガンスを融合しています。',
+        'scene-title': 'おすすめシーン',
+        'scene1': '日常飲用',
+        'scene2': 'ビジネス宴会',
+        'scene3': '家族の集まり',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

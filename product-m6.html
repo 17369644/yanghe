@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之蓝M6+ - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <a href="index.html" class="logo-link">
+        <img src="pic/logo2.png" class="logo" alt="logo">
+      </a>
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/m6.png" class="product-img" alt="梦之蓝M6+">
+      <div class="product-info">
+        <h1 class="product-title" id="title">梦之蓝M6+</h1>
+        <div class="product-desc" id="desc">更多陈酒，醇厚有加。更大容量，尽享有加。精奢设计，典雅有加。科技防伪，保真有加。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.f807f9c9.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            传统工艺结合现代技术：梦之蓝M6+采用传统的洋河酿造工艺，结合现代科技，确保每一瓶酒的高品质。<br>
+            长时间陈酿：酒体经过多年陈酿，使其香气更加浓郁，口感更加醇厚。<br>
+            优质原料：精选上等粮食和纯净水源，严格控制发酵和蒸馏过程，保证酒的纯净和品质。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            酒体丰满：梦之蓝M6+具有丰富的香气，包含花香、果香和粮香，口感饱满。<br>
+            入口顺滑：入口柔和顺滑，具有丝绸般的质感。<br>
+            回味悠长：回味甘甜，层次丰富，余韵悠长，给人以深刻的品饮体验。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.a83289fd.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.6d6af678.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            瓶身设计：瓶身设计高端大气，采用蓝色为主色调，结合现代设计元素，体现高贵典雅。<br>
+            包装精美：包装盒精致，适合作为高端礼品，增添产品的奢华感。<br>
+            品牌标志：瓶身和包装上有明显的品牌标志，彰显品牌价值和地位。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            更多陈酒，醇厚有加。梦之蓝 M6+在品质升级上 ，主体基酒贮存6年以上，辅以10年以上不同风格窖藏陈年调味酒精心调味，同时添加了更多的中段老酒。因为这种"中段陈酒"更多，酒体的厚重感增加，绵厚度增加，所以 M6+入口即化，回甜和回香丰富，喝起来更加醇厚，更有层次感。<br><br>
+            更大容量，尽享有加。梦之蓝M6+不仅仅是"加质量"，还"加容量"，在规格升级上由原来的500ml增加到了550ml，能更好地满足消费者的饮用需求，多一两，更尽兴。<br><br>
+            精奢设计，典雅有加。梦之蓝 M6+的外观设计保持了梦之蓝M6原来的经典造型，在形象升级上引入了"精奢"设计理念，瓶身深蓝色、香槟金色的色彩搭配更加雅致，整体产品外观更显大气质感与高贵。<br><br>
+            科技防伪，保真有加。梦之蓝 M6+采用了"三控多联、 四位一体"的组合式防伪，从开箱、开盒到开瓶，全方面、全系统防伪，让消费者买得更安心，喝得更放心。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.d2606965.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swrs.447482f4.png" alt="商务人士" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">商务人士</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdsj.efd122f5.png" alt="高端社交" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端社交</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdlp.acd0f1a4.png" alt="高端礼品" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端礼品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '梦之蓝M6+',
+        desc: '更多陈酒，醇厚有加。更大容量，尽享有加。精奢设计，典雅有加。科技防伪，保真有加。',
+        'craft-title': '工艺',
+        'craft-content': '传统工艺结合现代技术：梦之蓝M6+采用传统的洋河酿造工艺，结合现代科技，确保每一瓶酒的高品质。<br>长时间陈酿：酒体经过多年陈酿，使其香气更加浓郁，口感更加醇厚。<br>优质原料：精选上等粮食和纯净水源，严格控制发酵和蒸馏过程，保证酒的纯净和品质。',
+        'taste-title': '口感',
+        'taste-content': '酒体丰满：梦之蓝M6+具有丰富的香气，包含花香、果香和粮香，口感饱满。<br>入口顺滑：入口柔和顺滑，具有丝绸般的质感。<br>回味悠长：回味甘甜，层次丰富，余韵悠长，给人以深刻的品饮体验。',
+        'appearance-title': '外观',
+        'appearance-content': '瓶身设计：瓶身设计高端大气，采用蓝色为主色调，结合现代设计元素，体现高贵典雅。<br>包装精美：包装盒精致，适合作为高端礼品，增添产品的奢华感。<br>品牌标志：瓶身和包装上有明显的品牌标志，彰显品牌价值和地位。',
+        'other-title': '其他',
+        'other-content': '更多陈酒，醇厚有加。梦之蓝 M6+在品质升级上 ，主体基酒贮存6年以上，辅以10年以上不同风格窖藏陈年调味酒精心调味，同时添加了更多的中段老酒。因为这种"中段陈酒"更多，酒体的厚重感增加，绵厚度增加，所以 M6+入口即化，回甜和回香丰富，喝起来更加醇厚，更有层次感。<br><br>更大容量，尽享有加。梦之蓝M6+不仅仅是"加质量"，还"加容量"，在规格升级上由原来的500ml增加到了550ml，能更好地满足消费者的饮用需求，多一两，更尽兴。<br><br>精奢设计，典雅有加。梦之蓝 M6+的外观设计保持了梦之蓝M6原来的经典造型，在形象升级上引入了"精奢"设计理念，瓶身深蓝色、香槟金色的色彩搭配更加雅致，整体产品外观更显大气质感与高贵。<br><br>科技防伪，保真有加。梦之蓝 M6+采用了"三控多联、 四位一体"的组合式防伪，从开箱、开盒到开瓶，全方面、全系统防伪，让消费者买得更安心，喝得更放心。',
+        'scene-title': '适合场景',
+        'scene1': '商务人士',
+        'scene2': '高端社交',
+        'scene3': '高端礼品',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Dream Blue M6+',
+        desc: 'More aged liquor, richer taste. Larger capacity, more enjoyment. Luxurious design, more elegance. Anti-counterfeit technology, more authenticity.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Traditional Craft Combined with Modern Technology: Dream Blue M6+ uses traditional Yanghe brewing techniques combined with modern technology to ensure high quality in every bottle.<br>Long Aging: The liquor is aged for many years, resulting in a richer aroma and fuller taste.<br>Premium Ingredients: Selected top-quality grains and pure water, with strict control over fermentation and distillation, guarantee purity and quality.',
+        'taste-title': 'Taste',
+        'taste-content': 'Full-bodied: Dream Blue M6+ has a rich aroma, including floral, fruity, and grain notes, with a full-bodied taste.<br>Smooth Entry: Soft and smooth on entry, with a silky texture.<br>Long Aftertaste: Sweet aftertaste, rich layers, and a long, lingering finish for a deep tasting experience.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Bottle Design: The bottle is high-end and atmospheric, mainly blue, combined with modern design elements to reflect elegance and nobility.<br>Exquisite Packaging: The box is exquisite, suitable as a high-end gift, adding a sense of luxury.<br>Brand Mark: The bottle and packaging feature prominent brand marks, highlighting value and status.',
+        'other-title': 'Others',
+        'other-content': 'More aged liquor, richer taste. Dream Blue M6+ upgrades quality with a base liquor aged over 6 years, blended with 10+ years of aged flavoring liquor, and more mid-section aged liquor. This increases the body and smoothness, so M6+ melts in the mouth, with rich sweetness and aroma, making it fuller and more layered.<br><br>Larger capacity, more enjoyment. Dream Blue M6+ not only "adds quality" but also "adds capacity", upgrading from 500ml to 550ml to better meet consumer needs—more to enjoy.<br><br>Luxurious design, more elegance. The appearance maintains the classic M6 shape, with a "luxury" design concept, deep blue and champagne gold colors for a more elegant and noble look.<br><br>Anti-counterfeit technology, more authenticity. Dream Blue M6+ uses a comprehensive anti-counterfeit system, from unboxing to opening, ensuring peace of mind for consumers.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Business Professionals',
+        'scene2': 'High-end Social Events',
+        'scene3': 'Premium Gifts',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '夢の藍M6+',
+        desc: 'より多くの熟成酒、より豊かな味わい。大容量でより多くの楽しみ。高級なデザイン、よりエレガント。偽造防止技術で、より安心。',
+        'craft-title': '製法',
+        'craft-content': '伝統製法と現代技術の融合：夢の藍M6+は伝統的な洋河の醸造技術と現代技術を組み合わせ、すべてのボトルで高品質を実現。<br>長期熟成：長年の熟成により、香りがより豊かで味わいがより深くなります。<br>高品質原料：厳選された上質な穀物と純粋な水を使用し、発酵と蒸留を厳格に管理し、純粋さと品質を保証。',
+        'taste-title': '味わい',
+        'taste-content': '豊かな酒質：夢の藍M6+は花や果実、穀物の香りが豊かで、味わいも満ちています。<br>なめらかな口当たり：柔らかく滑らかで、シルクのような質感。<br>余韻が長い：甘い後味、層次感があり、長く続く余韻で深い体験を提供。',
+        'appearance-title': '外観',
+        'appearance-content': 'ボトルデザイン：高級感のあるブルーを基調に、現代的なデザイン要素を取り入れ、エレガントで高貴な印象。<br>精巧なパッケージ：精緻な箱は高級ギフトにも最適で、贅沢感を高めます。<br>ブランドマーク：ボトルやパッケージにはブランドのロゴが際立ち、価値と地位を強調。',
+        'other-title': 'その他',
+        'other-content': 'より多くの熟成酒、より豊かな味わい。夢の藍M6+は6年以上熟成の主体酒に10年以上の異なる熟成酒をブレンドし、中段熟成酒も多く加えています。これにより酒質の厚みとまろやかさが増し、口に含むととろけるような感覚、甘みと香りが豊かで、より層次感のある味わいに。<br><br>大容量でより多くの楽しみ。夢の藍M6+は「質の向上」だけでなく「容量の向上」も実現し、500mlから550mlに増量。より多く楽しめます。<br><br>高級なデザイン、よりエレガント。外観はM6のクラシックな形状を保ちつつ、「ラグジュアリー」なデザインコンセプトを導入。深いブルーとシャンパンゴールドの配色で、よりエレガントで高貴な印象に。<br><br>偽造防止技術で、より安心。夢の藍M6+は多重防偽システムを採用し、開封から飲用まで安心して楽しめます。',
+        'scene-title': 'おすすめシーン',
+        'scene1': 'ビジネスパーソン',
+        'scene2': 'ハイエンド社交',
+        'scene3': '高級ギフト',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

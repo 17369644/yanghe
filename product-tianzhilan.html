@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天之蓝 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/tianzhilan.png" class="product-img" alt="天之蓝">
+      <div class="product-info">
+        <h1 class="product-title" id="title">天之蓝</h1>
+        <div class="product-desc" id="desc">天之蓝呈现顺滑饱满的口感，融合浓郁的花香和谷物香气，细腻的甜味，持久清新的回味。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.5a31b352.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            经典酿造工艺：洋河天之蓝采用源自洋河的经典酿造技艺，融合了古老的酿酒智慧与现代技术，确保酒体风味的完美呈现。<br>
+            精致陈酿：酒体在特殊的酒窖中经历多年细致陈酿，酒香与酒味得以充分融合，达到绝佳的平衡感与圆润感。<br>
+            优选原料：精选优质高粱、稻米和天然泉水，精心挑选每一颗原料，确保酒的纯净、顺滑与细腻。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            醇厚丰满：天之蓝的酒体浓郁且饱满，层次丰富，融合了花香、果香与谷物香气，带来复杂而和谐的风味体验。<br>
+            入口丝滑：酒液顺滑细腻，带有微妙的甜美感和清新的口感，令人愉悦，回味悠长。<br>
+            层次丰富：随着饮用，酒体层次逐渐展现，香气和口感逐步发展，带来每一口的惊喜与满足感。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.a749258a.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.acc3cafa.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            高端瓶身设计：瓶身设计简洁大气，完美融合传统与现代元素，线条流畅，展现产品的高端气质。<br>
+            精致包装：包装精美，注重细节的设计，展现出洋河天之蓝的奢华感，适合作为高端礼品赠送。<br>
+            现代与传统结合：包装设计中巧妙地融入了现代美学与传统文化的元素，突出品牌的历史底蕴与创新。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            收藏价值：天之蓝不仅是一款白酒，更是一件艺术品，独特的瓶身与包装设计使其具备较高的收藏价值。<br><br>
+            高端定位：作为奢华的高端白酒，天之蓝不仅代表着口感上的优越，更是社会地位与品位的象征。<br><br>
+            品牌文化传承：天之蓝承载着洋河几百年历史的酿造传统，融合创新与精致，展现了洋河酒业的深厚文化底蕴。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.57d9313f.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdsj.efd122f5.png" alt="私人庆典" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">私人庆典</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swyq.3a7dad88.png" alt="高端品味人士" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端品味人士</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdlp.acd0f1a4.png" alt="高端礼品" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端礼品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '天之蓝',
+        desc: '天之蓝呈现顺滑饱满的口感，融合浓郁的花香和谷物香气，细腻的甜味，持久清新的回味。',
+        'craft-title': '工艺',
+        'craft-content': '经典酿造工艺：洋河天之蓝采用源自洋河的经典酿造技艺，融合了古老的酿酒智慧与现代技术，确保酒体风味的完美呈现。<br>精致陈酿：酒体在特殊的酒窖中经历多年细致陈酿，酒香与酒味得以充分融合，达到绝佳的平衡感与圆润感。<br>优选原料：精选优质高粱、稻米和天然泉水，精心挑选每一颗原料，确保酒的纯净、顺滑与细腻。',
+        'taste-title': '口感',
+        'taste-content': '醇厚丰满：天之蓝的酒体浓郁且饱满，层次丰富，融合了花香、果香与谷物香气，带来复杂而和谐的风味体验。<br>入口丝滑：酒液顺滑细腻，带有微妙的甜美感和清新的口感，令人愉悦，回味悠长。<br>层次丰富：随着饮用，酒体层次逐渐展现，香气和口感逐步发展，带来每一口的惊喜与满足感。',
+        'appearance-title': '外观',
+        'appearance-content': '高端瓶身设计：瓶身设计简洁大气，完美融合传统与现代元素，线条流畅，展现产品的高端气质。<br>精致包装：包装精美，注重细节的设计，展现出洋河天之蓝的奢华感，适合作为高端礼品赠送。<br>现代与传统结合：包装设计中巧妙地融入了现代美学与传统文化的元素，突出品牌的历史底蕴与创新。',
+        'other-title': '其他',
+        'other-content': '收藏价值：天之蓝不仅是一款白酒，更是一件艺术品，独特的瓶身与包装设计使其具备较高的收藏价值。<br><br>高端定位：作为奢华的高端白酒，天之蓝不仅代表着口感上的优越，更是社会地位与品位的象征。<br><br>品牌文化传承：天之蓝承载着洋河几百年历史的酿造传统，融合创新与精致，展现了洋河酒业的深厚文化底蕴。',
+        'scene-title': '适合场景',
+        'scene1': '高端品味人士',
+        'scene2': '私人庆典',
+        'scene3': '高端礼品',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Sky Blue',
+        desc: 'Sky Blue offers a smooth and full-bodied taste, blending rich floral and grain aromas, delicate sweetness, and a long-lasting refreshing finish.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Classic Brewing: Sky Blue uses Yanghe\'s classic brewing techniques, blending ancient wisdom with modern technology for perfect flavor.<br>Refined Aging: The liquor is aged for years in special cellars, allowing aroma and taste to fully integrate for balance and roundness.<br>Selected Ingredients: Only the best sorghum, rice, and natural spring water are chosen, ensuring purity, smoothness, and delicacy.',
+        'taste-title': 'Taste',
+        'taste-content': 'Rich and Full: Sky Blue is rich and full-bodied, with layers of floral, fruity, and grain aromas for a complex, harmonious experience.<br>Silky Entry: The liquor is smooth and delicate, with subtle sweetness and a refreshing taste, leaving a long, pleasant finish.<br>Layered Complexity: As you drink, the layers unfold, with aroma and taste developing for a delightful surprise in every sip.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Premium Bottle Design: The bottle is simple and elegant, blending traditional and modern elements with smooth lines for a high-end feel.<br>Exquisite Packaging: The packaging is refined and detailed, showing the luxury of Sky Blue and making it a perfect high-end gift.<br>Modern & Traditional: The design cleverly integrates modern aesthetics and traditional culture, highlighting the brand\'s heritage and innovation.',
+        'other-title': 'Others',
+        'other-content': 'Collectible Value: Sky Blue is not just a liquor, but a work of art. Its unique bottle and packaging make it highly collectible.<br><br>High-End Positioning: As a luxury high-end liquor, Sky Blue represents not only superior taste but also social status and taste.<br><br>Brand Heritage: Sky Blue carries Yanghe\'s centuries-old brewing tradition, blending innovation and refinement to showcase the brand\'s deep cultural heritage.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'High-End Connoisseurs',
+        'scene2': 'Private Celebrations',
+        'scene3': 'Premium Gifts',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '天の藍',
+        desc: '天の藍は滑らかで豊かな味わい、濃厚な花と穀物の香り、繊細な甘み、持続する爽やかな余韻が特徴です。',
+        'craft-title': '製法',
+        'craft-content': '伝統製法：天の藍は、洋河の伝統的な製法を用い、古くからの知恵と現代技術を融合し、酒質の完璧な表現を実現しています。<br>精緻な熟成：特別な酒蔵で長年熟成され、香りと味わいが十分に融合し、絶妙なバランスとまろやかさを実現。<br>厳選原料：上質な高粱、米、天然水を厳選し、純粋で滑らか、繊細な酒質を保証します。',
+        'taste-title': '味わい',
+        'taste-content': '濃厚で豊かな味わい：天の藍は濃厚で豊かな酒質、花や果実、穀物の香りが層を成し、複雑で調和の取れた風味を楽しめます。<br>なめらかな口当たり：なめらかで繊細な甘みと爽やかな味わい、心地よい余韻が長く続きます。<br>層次感豊か：飲むごとに層次感が現れ、香りと味わいが発展し、一口ごとに驚きと満足感をもたらします。',
+        'appearance-title': '外観',
+        'appearance-content': '高級ボトルデザイン：シンプルで洗練されたボトルデザインは、伝統と現代の要素を融合し、流れるようなラインで高級感を演出。<br>精巧なパッケージ：細部にまでこだわったパッケージは、天の藍の贅沢さを表現し、高級ギフトにも最適。<br>現代と伝統の融合：デザインには現代美学と伝統文化が巧みに取り入れられ、ブランドの歴史と革新性を際立たせています。',
+        'other-title': 'その他',
+        'other-content': 'コレクション価値：天の藍は白酒であるだけでなく、芸術品でもあり、独特なボトルとパッケージデザインは高いコレクション価値を持ちます。<br><br>高級志向：贅沢な高級白酒として、天の藍は味わいの優越性だけでなく、社会的地位や品位の象徴でもあります。<br><br>ブランド文化の継承：天の藍は数百年にわたる洋河の醸造伝統を受け継ぎ、革新と精緻さを融合し、洋河酒業の深い文化的背景を表現しています。',
+        'scene-title': 'おすすめシーン',
+        'scene1': 'ハイエンド愛好家',
+        'scene2': 'プライベートセレブレーション',
+        'scene3': '高級ギフト',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

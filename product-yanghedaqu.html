@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>洋河大曲新天蓝 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/yanghedaqu.png" class="product-img" alt="洋河大曲新天蓝">
+      <div class="product-info">
+        <h1 class="product-title" id="title">洋河大曲新天蓝</h1>
+        <div class="product-desc" id="desc">经典工艺酿造，香气浓郁，口感醇厚，适合日常饮用、商务宴请和礼品馈赠，体现传统与创新的结合。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.565f5509.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            传统工艺：洋河大曲新天蓝延续了经典的洋河酿造工艺，采用传统的大曲发酵法，保持了洋河酒的独特风味。<br>
+            现代科技：结合现代科技手段，优化了发酵和蒸馏过程，提高了酒体的纯净度和风味的稳定性。<br>
+            优质原料：精选上等高粱、大米、小麦等优质原料，确保每一瓶酒的高品质。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            酒体丰满：具有丰富的香气，包含花香、果香和粮香，口感饱满且和谐。<br>
+            入口顺滑：入口柔和顺滑，不刺激喉咙，适合各类消费者。<br>
+            回味悠长：回味悠长且甘甜，层次感丰富，带有淡雅的余韵。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.4c7ee105.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.6052ac99.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            瓶身设计：瓶身设计结合了现代时尚元素和传统风格，蓝色瓶身象征纯净与高雅。<br>
+            包装精美：包装设计精致，适合作为礼品，增强产品的视觉吸引力。<br>
+            品牌标识：瓶身和包装上清晰的洋河品牌标识，突显品牌的历史和信誉。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            经典传承：作为洋河大曲系列的一部分，新天蓝传承了洋河酒厂的经典酿造工艺和品质。<br><br>
+            市场定位：定位于中高端市场，价格适中，具有很高的性价比。<br><br>
+            品牌信任：洋河品牌在市场上享有较高的知名度和美誉度，消费者对其产品有较高的信任感。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.2bb924be.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-rcyy.c69d2def.png" alt="日常饮用" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">日常饮用</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swyq.3a7dad88.png" alt="商务宴请" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">商务宴请</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-jtjh.bc53a504.png" alt="家庭聚会" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">家庭聚会</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '洋河大曲新天蓝',
+        desc: '经典工艺酿造，香气浓郁，口感醇厚，适合日常饮用、商务宴请和礼品馈赠，体现传统与创新的结合。',
+        'craft-title': '工艺',
+        'craft-content': '传统工艺：洋河大曲新天蓝延续了经典的洋河酿造工艺，采用传统的大曲发酵法，保持了洋河酒的独特风味。<br>现代科技：结合现代科技手段，优化了发酵和蒸馏过程，提高了酒体的纯净度和风味的稳定性。<br>优质原料：精选上等高粱、大米、小麦等优质原料，确保每一瓶酒的高品质。',
+        'taste-title': '口感',
+        'taste-content': '酒体丰满：具有丰富的香气，包含花香、果香和粮香，口感饱满且和谐。<br>入口顺滑：入口柔和顺滑，不刺激喉咙，适合各类消费者。<br>回味悠长：回味悠长且甘甜，层次感丰富，带有淡雅的余韵。',
+        'appearance-title': '外观',
+        'appearance-content': '瓶身设计：瓶身设计结合了现代时尚元素和传统风格，蓝色瓶身象征纯净与高雅。<br>包装精美：包装设计精致，适合作为礼品，增强产品的视觉吸引力。<br>品牌标识：瓶身和包装上清晰的洋河品牌标识，突显品牌的历史和信誉。',
+        'other-title': '其他',
+        'other-content': '经典传承：作为洋河大曲系列的一部分，新天蓝传承了洋河酒厂的经典酿造工艺和品质。<br><br>市场定位：定位于中高端市场，价格适中，具有很高的性价比。<br><br>品牌信任：洋河品牌在市场上享有较高的知名度和美誉度，消费者对其产品有较高的信任感。',
+        'scene-title': '适合场景',
+        'scene1': '日常饮用',
+        'scene2': '商务宴请',
+        'scene3': '家庭聚会',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Yanghe Daqu New Sky Blue',
+        desc: 'Classic craftsmanship, rich aroma, mellow taste, suitable for daily drinking, business banquets and gift giving, reflecting the combination of tradition and innovation.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Traditional Craft: Yanghe Daqu New Sky Blue continues the classic Yanghe brewing process, using the traditional Daqu fermentation method to maintain the unique flavor of Yanghe liquor.<br>Modern Technology: Combined with modern technology, the fermentation and distillation process is optimized to improve the purity and stability of the liquor\'s flavor.<br>Premium Ingredients: Selected high-quality sorghum, rice, wheat and other premium ingredients ensure the high quality of every bottle.',
+        'taste-title': 'Taste',
+        'taste-content': 'Full-bodied: Rich aroma with floral, fruity and grain notes, full and harmonious taste.<br>Smooth Entry: Soft and smooth on entry, not irritating to the throat, suitable for all kinds of consumers.<br>Long Aftertaste: Long and sweet aftertaste, rich in layers, with an elegant finish.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Bottle Design: The bottle design combines modern fashion elements with traditional style, and the blue bottle symbolizes purity and elegance.<br>Exquisite Packaging: The packaging is exquisite and suitable as a gift, enhancing the product\'s visual appeal.<br>Brand Mark: Clear Yanghe brand mark on the bottle and packaging, highlighting the brand\'s history and reputation.',
+        'other-title': 'Others',
+        'other-content': 'Classic Inheritance: As part of the Yanghe Daqu series, New Sky Blue inherits the classic brewing craftsmanship and quality of the Yanghe distillery.<br><br>Market Positioning: Positioned in the mid-to-high-end market, moderately priced, and highly cost-effective.<br><br>Brand Trust: The Yanghe brand enjoys high popularity and reputation in the market, and consumers have a high degree of trust in its products.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Daily Drinking',
+        'scene2': 'Business Banquet',
+        'scene3': 'Family Gathering',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '洋河大曲新天藍',
+        desc: '伝統の技と現代の革新が融合したクラシックな工芸、豊かな香りとまろやかな味わい。日常飲用、ビジネス宴会、ギフトに最適。',
+        'craft-title': '工芸',
+        'craft-content': '伝統工芸：洋河大曲新天藍は、伝統的な大曲発酵法を用い、洋河酒の独特な風味を保っています。<br>現代技術：現代技術を融合し、発酵と蒸留工程を最適化。酒の純度と風味の安定性を向上。<br>高品質原料：厳選された高粱、米、小麦などの高品質原料を使用し、一本一本の品質を保証。',
+        'taste-title': '味わい',
+        'taste-content': '豊かなボディ：花や果実、穀物の香りが広がり、調和の取れた味わい。<br>滑らかな口当たり：柔らかく滑らかで、喉に刺激がなく、幅広い消費者に適しています。<br>長い余韻：甘く長い余韻、層のある味わい、上品なフィニッシュ。',
+        'appearance-title': '外観',
+        'appearance-content': 'ボトルデザイン：現代的なファッション要素と伝統的なスタイルを融合したデザイン。青いボトルは純粋さとエレガンスを象徴。<br>精巧なパッケージ：ギフトにも最適な精巧なパッケージで、製品の視覚的魅力を高めます。<br>ブランドマーク：ボトルとパッケージに明確な洋河ブランドマークがあり、ブランドの歴史と信頼を強調。',
+        'other-title': 'その他',
+        'other-content': 'クラシックな伝承：洋河大曲シリーズの一部として、新天藍は洋河酒造の伝統的な工芸と品質を受け継いでいます。<br><br>市場ポジショニング：中高級市場向け、手頃な価格でコストパフォーマンスが高い。<br><br>ブランド信頼：洋河ブランドは市場で高い知名度と評価を誇り、消費者からの信頼も厚い。',
+        'scene-title': 'おすすめシーン',
+        'scene1': '日常飲用',
+        'scene2': 'ビジネス宴会',
+        'scene3': '家族の集まり',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>微分子 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/weifenzi.png" class="product-img" alt="微分子">
+      <div class="product-info">
+        <h1 class="product-title" id="title">微分子</h1>
+        <div class="product-desc" id="desc">多、快、好、省</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.b083a926.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            分子级别精制：微分子酒采用现代科技与传统工艺相结合的方法，通过分子级别的过滤和精制，确保酒体更加纯净，杂质含量更低。<br>
+            精准控制：在发酵和酿造过程中，运用先进的科学技术对温度、湿度、发酵时间等进行精确控制，提升了酒的品质和稳定性。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            入口绵柔：酒体入口时柔和顺滑，不刺激喉咙，适合对酒精度数敏感的消费者。<br>
+            回味悠长：具有细腻柔和的口感，层次分明，回味持久，余味干净，带有淡雅的花果香和粮香。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.9211ea3f.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.309854db.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            瓶身设计：微分子酒的瓶身设计通常简约大方，采用现代化的设计元素，体现高科技与传统工艺的结合。<br>
+            包装精致：包装设计精美，具有一定的现代感和科技感，符合年轻消费者的审美需求。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            "多"是微量成分多。微分子酒可以检测的成分是4000多种，是其它高端白酒的4倍，其中包含大量的微量成分和健康因子，这些微量成分让酒的味感更复合，口感更绵柔，所以微分子酒具有"40度的口感，30 度的酒度，20度的后果，十分的绵柔，百分百的满意"的体验特点，好喝不易醉。<br><br>"快"是饮后醒酒快。白酒进入人体以后，无论多少都会进入血液循环系统和肝脏，而微分子酒中含有大量的小分子物质，可以促进食道、胃道、肠道液的分泌，而又不刺激、不伤害，同时微分子酒的特殊成分可以清除血液中的有害成分，所以微分子酒醒酒快，轻松畅饮不伤身。<br><br>"好"是健康功效好。微分子酒酚类物质的含量是红酒的6倍，这些酚类物质是抗癌的；"核苷类似物"含量是传统白酒的100倍。<br><br>"省"是尽兴更省心。微分子酒具有的这些特征，所以饮酒过程很舒适、饮酒过后很舒适、长期饮用很舒适。她能让您喝酒更舒心、爱人更放心、家人更省心。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.b22918ab.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-nqxfz.e2cf40c6.png" alt="年轻消费者" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">年轻消费者</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-ssjhhxxch.7f7c459e.png" alt="时尚聚会" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">时尚聚会和休闲场合</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '微分子',
+        desc: '多、快、好、省',
+        'craft-title': '工艺',
+        'craft-content': '分子级别精制：微分子酒采用现代科技与传统工艺相结合的方法，通过分子级别的过滤和精制，确保酒体更加纯净，杂质含量更低。<br>精准控制：在发酵和酿造过程中，运用先进的科学技术对温度、湿度、发酵时间等进行精确控制，提升了酒的品质和稳定性。',
+        'taste-title': '口感',
+        'taste-content': '入口绵柔：酒体入口时柔和顺滑，不刺激喉咙，适合对酒精度数敏感的消费者。<br>回味悠长：具有细腻柔和的口感，层次分明，回味持久，余味干净，带有淡雅的花果香和粮香。',
+        'appearance-title': '外观',
+        'appearance-content': '瓶身设计：微分子酒的瓶身设计通常简约大方，采用现代化的设计元素，体现高科技与传统工艺的结合。<br>包装精致：包装设计精美，具有一定的现代感和科技感，符合年轻消费者的审美需求。',
+        'other-title': '其他',
+        'other-content': '“多”是微量成分多。微分子酒可以检测的成分是4000多种，是其它高端白酒的4倍，其中包含大量的微量成分和健康因子，这些微量成分让酒的味感更复合，口感更绵柔，所以微分子酒具有“40度的口感，30 度的酒度，20度的后果，十分的绵柔，百分百的满意”的体验特点，好喝不易醉。<br><br>“快”是饮后醒酒快。白酒进入人体以后，无论多少都会进入血液循环系统和肝脏，而微分子酒中含有大量的小分子物质，可以促进食道、胃道、肠道液的分泌，而又不刺激、不伤害，同时微分子酒的特殊成分可以清除血液中的有害成分，所以微分子酒醒酒快，轻松畅饮不伤身。<br><br>“好”是健康功效好。微分子酒酚类物质的含量是红酒的6倍，这些酚类物质是抗癌的；“核苷类似物”含量是传统白酒的100倍。<br><br>“省”是尽兴更省心。微分子酒具有的这些特征，所以饮酒过程很舒适、饮酒过后很舒适、长期饮用很舒适。她能让您喝酒更舒心、爱人更放心、家人更省心。',
+        'scene-title': '适合场景',
+        'scene1': '年轻消费者',
+        'scene2': '时尚聚会和休闲场合',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Micro-Molecules',
+        desc: 'More, Faster, Better, Economical',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Molecular-level refinement: Micro-Molecules liquor combines modern technology with traditional craftsmanship, using molecular-level filtration and refinement to ensure a purer body and lower impurity content.<br>Precise control: Advanced scientific techniques are used to precisely control temperature, humidity, and fermentation time during brewing, improving quality and stability.',
+        'taste-title': 'Taste',
+        'taste-content': 'Smooth entry: The liquor is soft and smooth on entry, not irritating to the throat, suitable for consumers sensitive to alcohol strength.<br>Long aftertaste: Delicate and soft taste, clear layers, long-lasting aftertaste, clean finish, with elegant floral, fruity and grain aromas.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Bottle design: Micro-Molecules features a simple and modern bottle design, reflecting the combination of high-tech and traditional craftsmanship.<br>Exquisite packaging: The packaging is refined and modern, meeting the aesthetic needs of young consumers.',
+        'other-title': 'Others',
+        'other-content': '"More" means more trace components. Micro-Molecules can detect more than 4,000 components, four times that of other high-end liquors, including many trace components and health factors. These make the taste more complex and mellow, so Micro-Molecules offers the experience of "the taste of 40°, the strength of 30°, the after-effect of 20°, extremely mellow, and 100% satisfaction"—delicious and not easy to get drunk.<br><br>"Faster" means sobering up quickly. After entering the body, liquor enters the blood and liver, but Micro-Molecules contains many small molecules that promote secretion in the digestive tract without irritation or harm. Its special components can also clear harmful substances from the blood, so you sober up quickly and drink easily without harm.<br><br>"Better" means better health effects. The phenolic content in Micro-Molecules is six times that of red wine, and nucleoside analogs are 100 times that of traditional liquor.<br><br>"Economical" means more peace of mind. These features make the drinking process, after-drinking, and long-term drinking all comfortable. You can drink with peace of mind, your loved ones are reassured, and your family is at ease.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Young Consumers',
+        'scene2': 'Trendy Parties & Leisure',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '微分子',
+        desc: '多く、速く、良く、経済的',
+        'craft-title': '製法',
+        'craft-content': '分子レベルの精製：微分子酒は現代技術と伝統的な製法を融合し、分子レベルでのろ過と精製により、より純粋で不純物の少ない酒質を実現しています。<br>精密な管理：発酵や醸造の過程で先進的な科学技術を用いて温度、湿度、発酵時間などを精密に管理し、品質と安定性を高めています。',
+        'taste-title': '味わい',
+        'taste-content': 'なめらかな口当たり：口に含むと柔らかく滑らかで、喉を刺激せず、アルコール度数に敏感な方にも適しています。<br>余韻が長い：繊細で柔らかな味わい、層次感があり、余韻が長く、クリーンな後味。花や果実、穀物の香りがほのかに感じられます。',
+        'appearance-title': '外観',
+        'appearance-content': 'ボトルデザイン：微分子酒のボトルはシンプルでモダンなデザイン、高度な技術と伝統的な製法の融合を表現しています。<br>精巧なパッケージ：現代的で洗練されたパッケージは、若い消費者の美的ニーズに応えます。',
+        'other-title': 'その他',
+        'other-content': '「多い」は微量成分が多いこと。微分子酒は4000種類以上の成分を検出でき、他の高級白酒の4倍です。多くの微量成分や健康因子を含み、味わいがより複雑でまろやか。「40度の味、30度の強さ、20度の後味、非常にまろやか、100％満足」という特徴で、美味しく酔いにくい。<br><br>「速い」は酔い覚めが早いこと。白酒は体内に入ると血液や肝臓に入りますが、微分子酒には多くの小分子が含まれ、消化管の分泌を促進し、刺激や害がありません。特殊成分が血液中の有害物質を除去するため、酔い覚めが早く、安心して楽しめます。<br><br>「良い」は健康効果が高いこと。微分子酒のフェノール類含有量はワインの6倍、ヌクレオシド類は伝統的な白酒の100倍です。<br><br>「経済的」は安心して楽しめること。これらの特徴により、飲酒中も飲酒後も長期的にも快適。安心して飲め、家族も安心です。',
+        'scene-title': 'おすすめシーン',
+        'scene1': '若い消費者',
+        'scene2': 'トレンドパーティー・レジャー',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+    });
+  </script>
+</body>
+</html> 

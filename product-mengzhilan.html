@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>梦之蓝水晶版 - 洋河酒</title>
+  <style>
+    body { font-family: 'PingFang SC', 'Hiragino Sans', 'Noto Sans JP', Arial, sans-serif; margin: 0; background: #fff; }
+    .header { background: linear-gradient(90deg, #2176bd 0%, #c2d1df 100%); color: #fff; padding: 18px 0 10px 0; position: relative; }
+    .header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { height: 40px; margin-left: 18px; }
+    .lang-switch { display: flex; gap: 10px; }
+    .lang-switch button { background: linear-gradient(90deg, #fff 0%, #e3f0fa 100%); color: #2176bd; border: none; border-radius: 22px; padding: 6px 18px; font-size: 15px; font-weight: 500; box-shadow: 0 2px 8px rgba(90,180,255,0.08); cursor: pointer; transition: background 0.2s, color 0.2s, box-shadow 0.2s; outline: none; }
+    .lang-switch button.active { background: linear-gradient(90deg, #2176bd 0%, #5ec6fa 100%); color: #fff; box-shadow: 0 4px 16px rgba(33,118,189,0.18); }
+    .back-link { color: #fff; text-decoration: underline; font-size: 15px; margin-right: 18px; }
+    .container { max-width: 1200px; margin: 36px auto 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 36px 28px; }
+    @media (max-width: 1300px) {
+      .container { max-width: 98vw; }
+    }
+    .product-main { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; flex-direction: row-reverse; }
+    .product-img { width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 2px 12px rgba(33,118,189,0.10); background: #f7faff; }
+    .product-info { flex: 1; min-width: 260px; }
+    .product-title { font-size: 2.2rem; color: #2176bd; margin: 0 0 12px 0; }
+    .product-desc { font-size: 1.1rem; color: #444; margin-bottom: 18px; }
+    .section { margin-top: 36px; }
+    .section-title { font-size: 1.3rem; color: #2176bd; margin-bottom: 10px; }
+    .section-content { color: #333; line-height: 1.8; font-size: 1.05rem; }
+    .scene-list { display: flex; gap: 56px; flex-wrap: wrap; justify-content: center; margin-top: 10px; }
+    .scene-item { display: flex; flex-direction: column; align-items: center; }
+    .scene-item img { height: 50px; margin-bottom: 10px; }
+    .scene-item span { font-size: 1.08rem; color: #2176bd; font-weight: 500; }
+    .craft-flex {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      margin-top: 10px;
+      flex-wrap: wrap;
+      background: #f7faff;
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .craft-img {
+      width: 340px;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(33,118,189,0.10);
+      background: #f7faff;
+      flex-shrink: 0;
+      display: block;
+    }
+    .craft-right {
+      flex: 1;
+      min-width: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    @media (max-width: 900px) {
+      .container { padding: 10px; } .product-main { flex-direction: column !important; gap: 20px; }
+      .craft-flex { flex-direction: column; gap: 16px; align-items: stretch; padding: 18px 8px; }
+      .craft-img { width: 100%; max-width: 100%; margin: 0 auto; }
+    }
+    .craft-flex.taste-reverse {
+      flex-direction: row-reverse;
+    }
+    @media (max-width: 700px) {
+      .lang-switch button {
+        display: none;
+      }
+      #lang-select {
+        display: inline-block !important;
+        font-size: 15px;
+        border-radius: 22px;
+        padding: 6px 18px;
+        border: 1.5px solid #e3f0fa;
+        background: #fff;
+        color: #2176bd;
+        box-shadow: 0 2px 8px rgba(90,180,255,0.08);
+        outline: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="back-link" id="back-link">返回首页</a>
+      <img src="pic/logo2.png" class="logo" alt="logo">
+      <div class="lang-switch">
+        <button onclick="setLang('zh')">中文</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('ja')">日本語</button>
+        <select id="lang-select" style="display:none;margin-left:8px;min-width:80px;max-width:120px;">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="product-main" style="flex-direction: row-reverse;">
+      <img src="pic/mengzhilan.png" class="product-img" alt="梦之蓝水晶版">
+      <div class="product-info">
+        <h1 class="product-title" id="title">梦之蓝水晶版</h1>
+        <div class="product-desc" id="desc">晶亮绵润 超值超量。梦之蓝水晶版产自梦之蓝酒区，甄选50年窖池酿造特级酒，主体基酒贮存5年以上，辅以10年以上不同风格窖藏陈年调味酒精心调味，酒液晶亮明澈，细品绵厚圆润，畅饮淋漓尽致。</div>
+      </div>
+    </div>
+    <!-- 工艺区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/2.80282097.jpg" alt="工艺图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="craft-title">工艺</div>
+          <div class="section-content" id="craft-content">
+            传统工艺：梦之蓝水晶版采用代代相传的洋河传统酿造技术，确保酒体丰富、口感复杂。<br>
+            陈酿工艺：酒体在专门设计的酒窖中经过长时间陈酿，让酒香得以充分发展和成熟。<br>
+            优质原料：精选优质粮食和纯净水源，确保酒的最高品质。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 口感区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="taste-title">口感</div>
+          <div class="section-content" id="taste-content">
+            酒体丰满：白酒具有丰富、饱满的风味，包含花香、果香和粮香的复杂香气。<br>
+            入口顺滑：入口顺滑，带有细腻的甜味，回味悠长，柔和持久。<br>
+            层次丰富：多层次的风味在品尝过程中逐步展现，提供复杂而愉悦的饮酒体验。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/3.73177c5a.jpg" alt="口感图" class="craft-img">
+    </div>
+    <!-- 外观区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <img src="https://yanghe.sg/img/4.7741e9ea.jpg" alt="外观图" class="craft-img">
+      <div class="craft-flex" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="appearance-title">外观</div>
+          <div class="section-content" id="appearance-content">
+            水晶瓶：采用高质量水晶制作的瓶身，设计美观大方，彰显产品的高端品质。<br>
+            精致包装：包装设计优雅奢华，常采用精美设计和高端材质，适合作为礼品。<br>
+            独特品牌形象：设计结合了传统中国元素和现代风格，突出品牌的历史和创新。
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 其他区块 -->
+    <div class="section" style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
+      <div class="craft-flex taste-reverse" style="background: #f7faff; border-radius: 12px; padding: 32px 28px; box-shadow: none; margin: 0; flex: 1; min-width: 320px;">
+        <div class="craft-right">
+          <div class="section-title" id="other-title">其他</div>
+          <div class="section-content" id="other-content">
+            高收藏价值：梦之蓝水晶版不仅是饮品，更是具有收藏价值的艺术品，因其精美包装和限量供应。<br><br>
+            地位象征：拥有和品尝这款白酒被视为地位和品味的象征，常与奢华和威望联系在一起。<br><br>
+            文化传承：反映了洋河丰富的文化遗产，结合了古老传统和现代奢华。
+          </div>
+        </div>
+      </div>
+      <img src="https://yanghe.sg/img/5.e4757a05.jpg" alt="其他图" class="craft-img">
+    </div>
+    <!-- 适合场景区块 -->
+    <div class="section">
+      <div class="section-title" id="scene-title">适合场景</div>
+      <div class="scene-list" id="scene-list" style="justify-content: center; gap: 56px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-swrs.447482f4.png" alt="商务人士" style="height:50px; margin-bottom: 10px;">
+          <div id="scene1" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">商务人士</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdsj.efd122f5.png" alt="高端社交" style="height:50px; margin-bottom: 10px;">
+          <div id="scene2" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端社交</div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <img src="https://yanghe.sg/img/tc-gdlp.acd0f1a4.png" alt="高端礼品" style="height:50px; margin-bottom: 10px;">
+          <div id="scene3" style="font-size: 1.08rem; color: #2176bd; font-weight: 500;">高端礼品</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const langData = {
+      zh: {
+        title: '梦之蓝水晶版',
+        desc: '晶亮绵润 超值超量。梦之蓝水晶版产自梦之蓝酒区，甄选50年窖池酿造特级酒，主体基酒贮存5年以上，辅以10年以上不同风格窖藏陈年调味酒精心调味，酒液晶亮明澈，细品绵厚圆润，畅饮淋漓尽致。',
+        'craft-title': '工艺',
+        'craft-content': '传统工艺：梦之蓝水晶版采用代代相传的洋河传统酿造技术，确保酒体丰富、口感复杂。<br>陈酿工艺：酒体在专门设计的酒窖中经过长时间陈酿，让酒香得以充分发展和成熟。<br>优质原料：精选优质粮食和纯净水源，确保酒的最高品质。',
+        'taste-title': '口感',
+        'taste-content': '酒体丰满：白酒具有丰富、饱满的风味，包含花香、果香和粮香的复杂香气。<br>入口顺滑：入口顺滑，带有细腻的甜味，回味悠长，柔和持久。<br>层次丰富：多层次的风味在品尝过程中逐步展现，提供复杂而愉悦的饮酒体验。',
+        'appearance-title': '外观',
+        'appearance-content': '水晶瓶：采用高质量水晶制作的瓶身，设计美观大方，彰显产品的高端品质。<br>精致包装：包装设计优雅奢华，常采用精美设计和高端材质，适合作为礼品。<br>独特品牌形象：设计结合了传统中国元素和现代风格，突出品牌的历史和创新。',
+        'other-title': '其他',
+        'other-content': '高收藏价值：梦之蓝水晶版不仅是饮品，更是具有收藏价值的艺术品，因其精美包装和限量供应。<br><br>地位象征：拥有和品尝这款白酒被视为地位和品味的象征，常与奢华和威望联系在一起。<br><br>文化传承：反映了洋河丰富的文化遗产，结合了古老传统和现代奢华。',
+        'scene-title': '适合场景',
+        'scene1': '商务人士',
+        'scene2': '高端社交',
+        'scene3': '高端礼品',
+        'back-link': '返回首页'
+      },
+      en: {
+        title: 'Dream Blue Crystal Edition',
+        desc: 'Bright and mellow, great value and quantity. Dream Blue Crystal Edition is produced in the Dream Blue distillery area, using top-grade liquor brewed in 50-year-old cellars. The base liquor is aged for over 5 years, blended with 10+ years of aged flavoring liquor. The liquid is crystal clear, mellow and smooth, offering a rich and satisfying experience.',
+        'craft-title': 'Craftsmanship',
+        'craft-content': 'Traditional Craft: Dream Blue Crystal Edition uses time-honored Yanghe brewing techniques, ensuring a rich body and complex taste.<br>Aging Process: The liquor is aged in specially designed cellars for a long time, allowing the aroma to fully develop and mature.<br>Premium Ingredients: Selected high-quality grains and pure water ensure the highest quality.',
+        'taste-title': 'Taste',
+        'taste-content': 'Full-bodied: The liquor has a rich, full flavor with complex aromas of flowers, fruits, and grains.<br>Smooth Entry: Smooth on entry, with delicate sweetness, long and gentle aftertaste.<br>Layered Complexity: Multiple layers of flavor unfold during tasting, providing a complex and pleasant experience.',
+        'appearance-title': 'Appearance',
+        'appearance-content': 'Crystal Bottle: Made with high-quality crystal, the bottle is elegant and highlights the premium quality.<br>Exquisite Packaging: The packaging is elegant and luxurious, often using fine design and premium materials, perfect as a gift.<br>Unique Brand Image: The design combines traditional Chinese elements with modern style, emphasizing the brand\'s history and innovation.',
+        'other-title': 'Others',
+        'other-content': 'High Collectible Value: Dream Blue Crystal Edition is not only a drink, but also a collectible artwork, thanks to its exquisite packaging and limited supply.<br><br>Status Symbol: Owning and tasting this liquor is seen as a symbol of status and taste, often associated with luxury and prestige.<br><br>Cultural Heritage: Reflects Yanghe\'s rich cultural heritage, blending ancient tradition with modern luxury.',
+        'scene-title': 'Suitable Occasions',
+        'scene1': 'Business Professionals',
+        'scene2': 'High-end Social Events',
+        'scene3': 'Premium Gifts',
+        'back-link': 'Back to Home'
+      },
+      ja: {
+        title: '夢の藍クリスタル版',
+        desc: 'クリスタルのような透明感、なめらかで豊かな味わい。夢の藍クリスタル版は夢の藍酒区で生産され、50年の窖池で醸造された特級酒を厳選。主体酒は5年以上熟成、10年以上の異なるスタイルの熟成酒をブレンド。酒液はクリアでまろやか、豊かな体験を提供します。',
+        'craft-title': '製法',
+        'craft-content': '伝統製法：夢の藍クリスタル版は、代々受け継がれる洋河の伝統的な醸造技術を用い、豊かな酒質と複雑な味わいを実現。<br>熟成工程：特別設計の酒蔵で長期間熟成され、香りが十分に発展し成熟。<br>高品質原料：厳選された高品質な穀物と純粋な水を使用し、最高品質を保証。',
+        'taste-title': '味わい',
+        'taste-content': '豊かな酒質：豊かで満ちた味わい、花や果実、穀物の複雑な香り。<br>なめらかな口当たり：なめらかで繊細な甘み、長く柔らかな余韻。<br>層次感豊か：多層的な風味が徐々に現れ、複雑で心地よい体験を提供。',
+        'appearance-title': '外観',
+        'appearance-content': 'クリスタルボトル：高品質なクリスタルを使用したボトルは、エレガントで高級感を演出。<br>精巧なパッケージ：エレガントで豪華なパッケージは、贈り物にも最適。<br>独自ブランドイメージ：伝統的な中国要素と現代的なスタイルを融合し、ブランドの歴史と革新性を強調。',
+        'other-title': 'その他',
+        'other-content': '高いコレクション価値：夢の藍クリスタル版は飲み物であるだけでなく、精巧なパッケージと限定供給により、コレクション価値のあるアート作品でもあります。<br><br>地位の象徴：この白酒を所有し味わうことは、地位や品位の象徴とされ、贅沢や威厳と結びつけられます。<br><br>文化継承：洋河の豊かな文化遺産を反映し、古い伝統と現代の贅沢を融合。',
+        'scene-title': 'おすすめシーン',
+        'scene1': 'ビジネスパーソン',
+        'scene2': 'ハイエンド社交',
+        'scene3': '高級ギフト',
+        'back-link': 'ホームへ戻る'
+      }
+    };
+    function setLang(lang) {
+      for (const key in langData[lang]) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.innerHTML = langData[lang][key];
+        }
+      }
+      document.getElementById('scene1').innerHTML = langData[lang]['scene1'];
+      document.getElementById('scene2').innerHTML = langData[lang]['scene2'];
+      document.getElementById('scene3').innerHTML = langData[lang]['scene3'];
+      document.getElementById('back-link').innerHTML = langData[lang]['back-link'];
+      document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.lang-switch button[onclick*="${lang}"]`).classList.add('active');
+      localStorage.setItem('yanghe_lang', lang);
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      var lang = localStorage.getItem('yanghe_lang');
+      if (!lang || !['zh','en','ja'].includes(lang)) lang = 'zh';
+      setLang(lang);
+      // H5下select切换语言
+      var langSelect = document.getElementById('lang-select');
+      if(langSelect) {
+        langSelect.value = lang;
+        langSelect.addEventListener('change', function() {
+          setLang(this.value);
+        });
+      }
+    });
+  </script>
+</body>
+</html> 
